@@ -1,5 +1,6 @@
 import * as vscode from "vscode";
 import * as commands from "./commands";
+import { registerProtoDocumentSymbolProvider } from "./document_symbol_provider";
 import { PbkitExtensionContext } from "./types";
 import { ENABLEMENT_FLAG, EXTENSION_NS } from "./constants";
 
@@ -15,6 +16,7 @@ export async function activate(context: vscode.ExtensionContext) {
 
   const registerCommand = createRegisterCommand(context);
   registerCommand("restart", commands.startLanguageServer);
+  registerProtoDocumentSymbolProvider(context);
 
   await commands.startLanguageServer(context, extensionContext)();
 }

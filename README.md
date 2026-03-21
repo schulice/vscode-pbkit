@@ -6,3 +6,4 @@ This extension adds Protobuf support, powered by Pbkit language server.
 - Syntax highlighting
 - Go to Definition
 - Auto completion
+- Outline / document symbols for `.proto` files
